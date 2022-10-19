@@ -121,7 +121,7 @@ def simulate_game_instance(game_elements, history_log_file=None, np_seed=2):
             params['self'] = out_of_turn_player
             params['current_gameboard'] = game_elements
             game_elements['history']['param'].append(params)
-            game_elements['history']['return'].append(oot_code)
+            game_elements['history']['return'].append(oot_code) 
 
             if oot_code == 2:
                 skip_turn += 1
@@ -380,8 +380,8 @@ def play_game():
     player_decision_agents['player_3'] = Agent(**background_agent_v3_1.decision_agent_methods)
     player_decision_agents['player_4'] = Agent(**background_agent_v3_1.decision_agent_methods)
 
-    game_elements = set_up_board('/home/ec2-user/GNOME-p3-AWS/monopoly_game_schema_v1-2.json',
-                                 player_decision_agents)
+    game_elements = set_up_board('/Users/k1ra/Desktop/Python_scripts/monopoly RL/GNOME-p3/monopoly_game_schema_v1-2.json',
+                                player_decision_agents)
 
     #Comment out the above line and uncomment the piece of code to read the gameboard state from an existing json file so that
     #the game starts from a particular game state instead of initializing the gameboard with default start values.
@@ -431,8 +431,8 @@ def play_game_in_tournament(game_seed, inject_novelty_function=None):
     player_decision_agents['player_3'] = Agent(**background_agent_v3.decision_agent_methods)
     player_decision_agents['player_4'] = Agent(**background_agent_v3.decision_agent_methods)
 
-    game_elements = set_up_board('/home/ec2-user/GNOME-p3-AWS/monopoly_game_schema_v1-2.json',
-                                 player_decision_agents)
+    game_elements = set_up_board('/Users/k1ra/Desktop/Python_scripts/monopoly RL/GNOME-p3/monopoly_game_schema_v1-2.json',
+                                player_decision_agents)
     
     #Comment out the above line and uncomment the piece of code to read the gameboard state from an existing json file so that
     #the game starts from a particular game state instead of initializing the gameboard with default start values.
@@ -463,4 +463,4 @@ def play_game_in_tournament(game_seed, inject_novelty_function=None):
             return winner
 
 
-#play_game()
+play_game()
